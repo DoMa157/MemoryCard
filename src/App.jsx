@@ -7,7 +7,7 @@ import MemoryCard from './components/MemoryCard';
 import LeaderBoard from './components/Leaderboard';
 import Header from './components/Header';
 
-const characterNames = ["Naruto Uzumaki", "Obito Uchiha", "Sasuke Uchiha", "Kakashi Hatake", "Itachi Uchiha", "Gaara", "Sakura Haruno", "Tsunade", "Shikamaru Nara"];
+const characterNames = ["Naruto Uzumaki", "Obito Uchiha", "Sasuke Uchiha", "Kakashi Hatake", "Itachi Uchiha", "Gaara", "Sakura Haruno", "Tsunade", "Black Zetsu", "Orochimaru", "Minato Namikaze", "Boruto Uzumaki"];
 function App() {
   const [characters, setCharacters] = useState(characterNames.map(function(x){
     return {name: x, id: uuid()}
@@ -34,14 +34,13 @@ function App() {
   }
   return (
     <>
-    <Header/>
+    <Header current = {score.current} highScore={score.high}/>
     <div className = "flex-container">
     <div className = "cards-container">
     {characters.map(x => {
       return <MemoryCard key = {x.id} query = {x.name} onClick = {(e) => handleClick(e, x.id)}/>
     })}
     </div>
-    <LeaderBoard current = {score.current} highScore={score.high}/>
     </div>
     </>
   )

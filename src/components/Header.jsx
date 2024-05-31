@@ -1,7 +1,10 @@
-export default function Header(){
+import LeaderBoard from "./Leaderboard";
+
+export default function Header({current, highScore}){
     return (
         <div className = "header">
-            Welcome to MemoryCard: Naruto Edition!
+            <div>Welcome to MemoryCard: <img src = 'src\assets\Naruto_logo.png'width = "100"/> Edition!</div>
+            <LeaderBoard current = {current} highScore={highScore}/>
         </div>
     )
 }

@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@font-face {
+  font-family: 'Naruto';
+  src: url('./assets/njnaruto.ttf');
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Naruto", "Varela Round", sans-serif;
   font-weight: 400;
   font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1b2124;
 }
 
+body{
+  background: url('./assets/konoha.jpg');
+  background-size: 100% 100%;
+  background-position: 50%;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -37,9 +51,7 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
+
 
 .read-the-docs {
   color: #888;
@@ -48,17 +60,18 @@
 
 .cards-container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: min-content;
-  min-width: 900px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 16px;
 }
 
-
 .card{
-  border: 2px solid gray;
+  border: 2px solid #edb870;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 24px;
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
 }
 
 .card img{
@@ -66,14 +79,37 @@
 }
 
 .card:hover{
-  box-shadow: 2px 2px 8px pink;
+  box-shadow: 2px 2px 8px #e86e38;
 }
 .header{
   font-size: 24px;
   font-weight: bold;
 }
+
+@media (max-width: 500px){
+  .header, .card{
+    font-size: 18px;
+  }
+  .cards-container{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    min-width: 100vw;
+  }
+}
 .flex-container{
   margin-top: 16px;
   display: flex;
   gap: 16px;
+  min-width: 1500px;
+  justify-content: center;
+}
+
+.leaderboard{
+  min-width: 150px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: calc(min(1800px, 100vw));
+  justify-self: flex-start;
 }
