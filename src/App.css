@@ -86,13 +86,22 @@ body{
   font-weight: bold;
 }
 
-@media (max-width: 500px){
+@media (max-width: 900px){
   .header, .card{
     font-size: 18px;
   }
   .cards-container{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    min-width: 100vw;
+    min-width: 100%;
+  }
+  body{
+    background-size: auto 100%;
+  }
+}
+
+@media (max-width: 350px){
+  .header, .card{
+    font-size: 12px;
   }
 }
 .flex-container{

@@ -35,12 +35,10 @@ function App() {
   return (
     <>
     <Header current = {score.current} highScore={score.high}/>
-    <div className = "flex-container">
     <div className = "cards-container">
     {characters.map(x => {
       return <MemoryCard key = {x.id} query = {x.name} onClick = {(e) => handleClick(e, x.id)}/>
     })}
-    </div>
     </div>
     </>
   )
