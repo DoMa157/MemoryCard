@@ -63,6 +63,7 @@ body{
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 16px;
+  height: 100vh;
 }
 
 .card{
@@ -91,26 +92,27 @@ body{
     font-size: 18px;
   }
   .cards-container{
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    min-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100vw;
   }
   body{
     background-size: auto 100%;
+    background-repeat: repeat;
   }
 }
 
-@media (max-width: 350px){
+@media (max-width: 650px){
   .header, .card{
     font-size: 12px;
   }
+  .card img{
+    height: 100px;
+  }
+  .cards-container{
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
 }
-.flex-container{
-  margin-top: 16px;
-  display: flex;
-  gap: 16px;
-  min-width: 1500px;
-  justify-content: center;
-}
+
 
 .leaderboard{
   min-width: 150px;
